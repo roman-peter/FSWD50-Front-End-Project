@@ -1,0 +1,21 @@
+<div class="user-login" *ngIf="!(authService.user | async)">
+  <label for="e-mail">E-Mail</label><br>
+  <input class="form-control" type="text" [(ngModel)]="email"><br><br>
+
+  <label for="e-mail">Password</label>
+  <input class="form-control" type="password" [(ngModel)]="password">
+
+<!--   <button (click)="signup()" [disabled]="!email || !password">
+    Signup
+  </button> -->
+
+  <button class="btn" (click)="login()" [disabled]="!email || !password">
+    Login
+  </button>
+</div>
+
+<button class="btn" (click)="logout()" *ngIf="authService.user | async">
+  Logout
+</button>
+
+<p class="user-welcome" *ngIf="authService.user | async">Logged in with {{ (authService.user | async)?.email }}.</p>
