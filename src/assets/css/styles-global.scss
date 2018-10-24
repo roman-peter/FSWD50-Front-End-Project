@@ -10,12 +10,7 @@ $sec-color: #222;
 $link-color: #444;
 $compl-color: #d63030;
 $font-stack: 'Cabin', sans-serif;
-
-// transition variable for hovers //
-$trans-hover: 0.4s;
-
-
-
+$trans-hover: 0.4s; // transition variable for hovers //
 
 
 // DEFAULT TYPO AND STYLING //
@@ -54,6 +49,11 @@ a:hover {
 .navbar-collapse .btn:hover {
     background: $compl-color;
   }
+
+.user-welcome {
+  font-size: 0.7rem;
+}
+
 
 
 // CAROUSEL STYLES //

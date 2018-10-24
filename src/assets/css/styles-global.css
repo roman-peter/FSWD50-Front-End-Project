@@ -27,6 +27,9 @@ a:hover {
 .navbar-collapse .btn:hover {
   background: #d63030; }
 
+.user-welcome {
+  font-size: 0.7rem; }
+
 .carousel {
   margin-bottom: 4rem; }
 

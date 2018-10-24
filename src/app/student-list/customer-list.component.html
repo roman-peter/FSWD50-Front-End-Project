@@ -1,0 +1,22 @@
+<div class="container mt-5">
+        <h1>Directory of Code Factory students</h1>
+<form class="form-inline">
+        <h4>Search for course number: </h4>
+        <input name="searchInput" class="form-control" placeholder="for example FSWD10" #searchInput="ngModel" [(ngModel)]="searchText">
+        <button class="btn btn-outline-primary" (click)="searchText=''">reset</button>
+</form>
+        <table class="table table-sm table-light">
+                <thead class="thead-dark">
+                        <th>Name</th>
+                        <th>eMail</th>
+                        <th>Course</th>
+                </thead>
+                <ng-container *ngFor="let customer of customerArray">
+                        <tr class="" *ngIf="filterCondition(customer)">
+                                <td>{{customer.first_name}} {{customer.last_name}}</td>
+                                <td>{{customer.email}}</td>
+                                <td>{{customer.course}}</td>
+                        </tr>
+                </ng-container>
+        </table>
+</div>

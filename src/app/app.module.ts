@@ -1,8 +1,9 @@
+//**** ANGULAR MODULES ****//
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule,FormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 //**** TEMPLATE COMPONENTS ****//
 import { NavbarComponent } from './navbar/navbar.component';
@@ -18,9 +19,6 @@ import { EventsComponent } from './events/events.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 
-//**** NOT YET USED ****//
-import { NlRegistrationComponent } from './nl-registration/nl-registration.component';
-
 //**** FIREBASE MODULES ****//
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
@@ -32,6 +30,12 @@ import { UsersService } from './shared/users.service';
 import { UserComponent } from './user/user.component';
 import { IntranetComponent } from './intranet/intranet.component';
 
+//**** USER MANAGEMENT MODULES ****//
+import { CustomerService } from './shared/customer.service';
+import { CustomerListComponent } from './student-list/customer-list.component';
+
+//**** NOT YET USED ****//
+import { NlRegistrationComponent } from './nl-registration/nl-registration.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,8 @@ import { IntranetComponent } from './intranet/intranet.component';
     TestimonialsComponent,
     NlRegistrationComponent,
     UserComponent,
-    IntranetComponent
+    IntranetComponent,
+    CustomerListComponent
   ],
 
   imports: [
@@ -61,7 +66,7 @@ import { IntranetComponent } from './intranet/intranet.component';
     AngularFireAuthModule
   ],
 
-  providers: [UsersService],
+  providers: [UsersService, CustomerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

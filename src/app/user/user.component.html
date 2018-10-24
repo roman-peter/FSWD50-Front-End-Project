@@ -1,8 +1,4 @@
 <div class="container mt-5">
-  <p class="user-welcome" *ngIf="authService.user | async">Logged in as {{ (authService.user | async)?.email }}.</p>
-  <button class="btn-outline" (click)="logout()" *ngIf="authService.user | async">
-    Logout
-  </button>
   <div class="row justify-content-center">
     <div class="col-md-3">    
       <div class="user-login" *ngIf="!(authService.user | async)">
@@ -11,22 +7,19 @@
   
           <label for="e-mail">Password</label>
           <input class="form-control" type="password" [(ngModel)]="password">
-  
-        <!--   <button (click)="signup()" [disabled]="!email || !password">
-            Signup
-          </button> -->
-  
           <button class="btn" (click)="login()" [disabled]="!email || !password">
             Login
           </button>
         </div>
       </div>
   </div>
-
+        <button class="btn-outline" (click)="logout()" *ngIf="authService.user | async">
+        Logout
+        </button>
 
 <!-- CONTENT EXCLUSIVE FOR LOGGED IN USERS -->
 <div *ngIf="authService.user | async" >
-  <h2 class="title text-center p-3">{{ (authService.user | async)?.email }}, welcome to your page!</h2>
+  <h3 class="title text-center p-3">{{ (authService.user | async)?.email }}, welcome to your page!</h3>
   <div class="row">
     <div class="col-md-3 card">
       <ul class="nav flex-column">

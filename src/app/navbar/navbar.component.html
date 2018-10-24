@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-md navbar-light bg-light">
   <a class="navbar-brand"  routerLink = "/"><img src="./assets/img/alumnilogo.png" alt="Alumni of Code Factory Logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,15 +23,17 @@
         <a class="nav-link" routerLink = "events" routerLinkActive="nav-active">Events</a>
       </li>
     </ul>
-    <a routerLink = "intranet">
-      <button type="button" class="btn">Login</button>
-    </a>
-    <div *ngIf="authService.user | async; else loggedOut">
-      Welcome back, friend.
-    </div>
 
+    <div *ngIf="authService.user | async; else loggedOut">
+        <span  class="user-welcome mr-3" *ngIf="authService.user | async">logged in as {{ (authService.user | async)?.email }}</span>
+        <button class="btn-outline" (click)="logout()" *ngIf="authService.user | async">
+        Logout
+        </button>
+    </div>
     <ng-template #loggedOut>
-      Please friend, login.
+    <a routerLink = "intranet">
+      <button type="button" class="btn">Intranet</button>
+    </a>
     </ng-template>
 </div>
 </nav>
