@@ -1,0 +1,35 @@
+.img-fluid {
+	height: 250px;
+	width: 100%;
+}
+
+.title {
+	color: #821918;
+}
+
+figcaption {
+	color: #821918;
+	font-size: 20px;
+}
+
+hr {
+	border-width: 3px;
+}
+
+@media (min-width: 992px) {
+	.skills {
+		order: 1;
+	}
+
+	.summary {
+		order: 2;
+	}
+
+	.change {
+  		order: 3;
+	}
+	
+	.expand {
+		order: 4;
+	}
+}

@@ -30,6 +30,7 @@ import { environment } from "../environments/environment";
 //**** USER MANAGEMENT MODULES ****//
 import { UsersService } from './shared/users.service';
 import { UserComponent } from './user/user.component';
+import { IntranetComponent } from './intranet/intranet.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { UserComponent } from './user/user.component';
     DirectoryComponent,
     TestimonialsComponent,
     NlRegistrationComponent,
-    UserComponent
+    UserComponent,
+    IntranetComponent
   ],
 
   imports: [

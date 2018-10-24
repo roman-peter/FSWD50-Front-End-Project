@@ -1,21 +1,123 @@
-<div class="user-login" *ngIf="!(authService.user | async)">
-  <label for="e-mail">E-Mail</label><br>
-  <input class="form-control" type="text" [(ngModel)]="email"><br><br>
-
-  <label for="e-mail">Password</label>
-  <input class="form-control" type="password" [(ngModel)]="password">
-
-<!--   <button (click)="signup()" [disabled]="!email || !password">
-    Signup
-  </button> -->
-
-  <button class="btn" (click)="login()" [disabled]="!email || !password">
-    Login
+<div class="container mt-5">
+  <p class="user-welcome" *ngIf="authService.user | async">Logged in as {{ (authService.user | async)?.email }}.</p>
+  <button class="btn-outline" (click)="logout()" *ngIf="authService.user | async">
+    Logout
   </button>
+  <div class="row justify-content-center">
+    <div class="col-md-3">    
+      <div class="user-login" *ngIf="!(authService.user | async)">
+          <label for="e-mail">E-Mail</label><br>
+          <input class="form-control" type="text" [(ngModel)]="email"><br><br>
+  
+          <label for="e-mail">Password</label>
+          <input class="form-control" type="password" [(ngModel)]="password">
+  
+        <!--   <button (click)="signup()" [disabled]="!email || !password">
+            Signup
+          </button> -->
+  
+          <button class="btn" (click)="login()" [disabled]="!email || !password">
+            Login
+          </button>
+        </div>
+      </div>
+  </div>
+
+
+<!-- CONTENT EXCLUSIVE FOR LOGGED IN USERS -->
+<div *ngIf="authService.user | async" >
+  <h2 class="title text-center p-3">{{ (authService.user | async)?.email }}, welcome to your page!</h2>
+  <div class="row">
+    <div class="col-md-3 card">
+      <ul class="nav flex-column">
+        <h3 class="sideMenu p-3">Your material</h3>
+        <p class="font-weight-bold">JavaScript</p>
+
+        <li class="nav-item">
+            <a class="nav-link" href="https://eloquentjavascript.net/" target="_blank">Book Eloquent JavaScript</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://javascript.info/" target="_blank">Modern JavaScript Tutorial</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://developer.mozilla.org/bm/docs/Web/JavaScript" target="_blank">Web Technologies for Developers</a>
+          </li>
+
+        <p class="font-weight-bold">Angular</p>
+          <li class="nav-item">
+            <a class="nav-link" href="https://angular.io/tutorial" target="_blank">Angular Tutorial</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/angular/angular" target="_blank">GitHub Framework</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.ng-book.com/2/#contents" target="_blank">Ang Book</a>
+          </li>
+
+      <p class="font-weight-bold">PHP</p>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.siliconindia.com/online_course/php_course-id-6.html" target="_blank">Online PHP Training Content</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://phpsecurity.readthedocs.io/en/latest/Introduction.html" target="_blank">PHP Security</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://phptherightway.com/" target="_blank">PHP: The Right Way</a>
+          </li>
+        
+      </ul>
+    </div>
+    
+
+    <div class="col-md-9 card">
+      <h3 class="title text-center p-3">Latest News</h3>
+
+      <div class="row">
+        <div class="col-md-4 col-sm-12">
+          <figure>
+            <img class="img-fluid img-thumbnail" src="/../assets/img/kotlin.jpg">
+            <figcaption class="font-weight-bold"><a class="news" href="https://www.developer-tech.com/news/2018/oct/18/github-kotlin-fastest-growing-language/" target="_blank">GitHub: Kotlin is now the fastest growing language</a></figcaption>
+          </figure>
+        </div>
+
+        <div class="col-md-4 col-sm-12">
+          <figure>
+            <img class="img-fluid img-thumbnail" src="/../assets/img/angular-7.0.jpg">
+            <figcaption class="font-weight-bold"><a class="news" href="https://sdtimes.com/webdev/angular-7-0-0-released/" target="_blank">Angular 7.0 released</a></figcaption>
+          </figure>
+        </div>
+
+        <div class="col-md-4 col-sm-12">
+          <figure>
+            <img class="img-fluid img-thumbnail" src="/../assets/img/Software_Development.jpg">
+            <figcaption class="font-weight-bold"><a class="news" href="https://www.forbes.com/sites/forbestechcouncil/2018/10/05/15-predictions-for-the-next-big-thing-in-software-development/#39415350522f" target="_blank">15 Predictions For The Next Big Thing In Software Development</a></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <h3 class="title text-center p-3">Your Badges</h3>
+
+      <div class="row p-3">
+        <div class="col-md-3">
+          <img class="img-fluid img-thumbnail" src="./assets/img/golden.jpg">
+        </div>
+        <div class="col-md-9">
+          <p class="font-weight-bold">Golder Badge: HTML5, CSS3, GitHub, Bootstrap</p>
+          <p>We state that you earned the Golden Badge thanks to your own achievements and effort, and therefore are ready to work with these technologies.</p>
+        </div>
+      </div>
+
+      <div class="row p-3">
+        <div class="col-md-3">
+          <img class="img-fluid img-thumbnail" src="/../assets/img/silver.jpg">
+        </div>
+        <div class="col-md-9">
+          <p class="font-weight-bold">Silver Badge: JavaScript, TypeScript, Angular 6, Documentation</p>
+          <p>We state that you earned the Silver Badge thanks to your own achievements and effort, and therefore are ready to work with these technologies.</p>
+        </div>
+      
+      </div>
+    </div>
+  </div>
 </div>
-
-<button class="btn" (click)="logout()" *ngIf="authService.user | async">
-  Logout
-</button>
-
-<p class="user-welcome" *ngIf="authService.user | async">Logged in with {{ (authService.user | async)?.email }}.</p>
+</div>

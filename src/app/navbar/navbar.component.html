@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-sm mainnav">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
   <a class="navbar-brand"  routerLink = "/"><img src="./assets/img/alumnilogo.png" alt="Alumni of Code Factory Logo"></a>
-  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="navbar-collapse collapse">
+  <div class="collapse navbar-collapse" id="navbarsExample04">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" routerLink = "/" routerLinkActive="nav-active" [routerLinkActiveOptions]="{exact: true}">Home <span class="sr-only">(current)</span></a>
@@ -22,38 +22,15 @@
         <a class="nav-link" routerLink = "events" routerLinkActive="nav-active">Events</a>
       </li>
     </ul>
-<!--     <a class="btn login-btn btn-lg"  href="#" data-toggle="modal" data-target="#login-modal" role="button">Login</a>
-
-    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog">
-            <div class="loginmodal-container">
-              <h1>Login to Your Account</h1><br>
-              <form>
-              <input type="text" name="user" placeholder="Username">
-              <input type="password" name="pass" placeholder="Password">
-              <input type="submit" name="login" class="login loginmodal-submit" value="Login">
-              </form>
-              
-              <div class="login-help">
-              <a href="#">Register</a> - <a href="#">Forgot Password</a>
-              </div> 
-              <app-user></app-user>
-            </div>
-          </div>
-    </div> -->
-
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Login
-</button>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <app-user></app-user>
+    <a routerLink = "intranet">
+      <button type="button" class="btn">Login</button>
+    </a>
+    <div *ngIf="authService.user | async; else loggedOut">
+      Welcome back, friend.
     </div>
-  </div>
-</div>
 
-  </div>
+    <ng-template #loggedOut>
+      Please friend, login.
+    </ng-template>
+</div>
 </nav>

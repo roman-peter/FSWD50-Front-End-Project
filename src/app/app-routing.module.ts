@@ -5,6 +5,8 @@ import { CareerComponent } from './career/career.component';
 import { EventsComponent } from './events/events.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { IntranetComponent } from './intranet/intranet.component';
+
 
 
 const routes: Routes = 
@@ -14,6 +16,8 @@ const routes: Routes =
 	{ path: 'events', component: EventsComponent},
 	{ path: 'directory', component: DirectoryComponent},
 	{ path: 'stories', component: TestimonialsComponent},
+	{ path: 'intranet', component: IntranetComponent}
+
 ];
 
 @NgModule({
