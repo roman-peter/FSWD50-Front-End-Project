@@ -18,6 +18,10 @@ body {
   font-family: $font-stack;
 }
 
+h1, h2, h3 {
+  color: $prim-color;
+}
+
 a {
   color: $link-color;
 }
@@ -28,16 +32,6 @@ a:hover {
 
 .title {
     color: #821918;
-}
-
-.carousel-caption .btn {
-  background: $prim-color;
-  color:#fff;
-  border: none;
-}
-
-.carousel-caption .btn:hover {
-    background: $compl-color;
 }
 
 .navbar-collapse .btn {
@@ -55,8 +49,21 @@ a:hover {
 }
 
 
-
 // CAROUSEL STYLES //
+
+.carousel-caption h1 {
+  color:#fff;
+} 
+
+.carousel-caption .btn {
+  background: $prim-color;
+  color:#fff;
+  border: none;
+}
+
+.carousel-caption .btn:hover {
+    background: $compl-color;
+}
 
 .carousel {
   margin-bottom: 4rem;
@@ -92,7 +99,6 @@ a:hover {
   right:0;
   background:rgba(0,0,0,0.6);
 }
-
 
 
 // TEASERS //
@@ -200,6 +206,15 @@ a:hover {
     background: $prim-color;
   }
 
+// DIRECTORY PAGE //
+.students-table td {
+  font-size: 0.8rem;
+}
+
+.table .students-thead th {
+  background: $prim-color;
+  border:none;
+}
 
 // FOOTER //
 

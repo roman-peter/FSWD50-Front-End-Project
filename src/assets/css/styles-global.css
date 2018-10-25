@@ -2,6 +2,9 @@
 body {
   font-family: "Cabin", sans-serif; }
 
+h1, h2, h3 {
+  color: #821918; }
+
 a {
   color: #444; }
 
@@ -10,14 +13,6 @@ a:hover {
 
 .title {
   color: #821918; }
-
-.carousel-caption .btn {
-  background: #821918;
-  color: #fff;
-  border: none; }
-
-.carousel-caption .btn:hover {
-  background: #d63030; }
 
 .navbar-collapse .btn {
   background: #821918;
@@ -29,6 +24,17 @@ a:hover {
 
 .user-welcome {
   font-size: 0.7rem; }
+
+.carousel-caption h1 {
+  color: #fff; }
+
+.carousel-caption .btn {
+  background: #821918;
+  color: #fff;
+  border: none; }
+
+.carousel-caption .btn:hover {
+  background: #d63030; }
 
 .carousel {
   margin-bottom: 4rem; }
@@ -133,6 +139,13 @@ a:hover {
 .login-btn:hover {
   color: #fff;
   background: #821918; }
+
+.students-table td {
+  font-size: 0.8rem; }
+
+.table .students-thead th {
+  background: #821918;
+  border: none; }
 
 .footer {
   background: #821918;

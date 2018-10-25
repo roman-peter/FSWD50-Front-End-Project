@@ -25,10 +25,9 @@
     </ul>
 
     <div *ngIf="authService.user | async; else loggedOut">
-        <span  class="user-welcome mr-3" *ngIf="authService.user | async">logged in as {{ (authService.user | async)?.email }}</span>
-        <button class="btn-outline" (click)="logout()" *ngIf="authService.user | async">
-        Logout
-        </button>
+        <span  class="user-welcome mr-3" *ngIf="authService.user | async">
+          Logged in as {{ (authService.user | async)?.email }} | <a routerLink = "intranet">Intranet</a>
+        </span>
     </div>
     <ng-template #loggedOut>
     <a routerLink = "intranet">

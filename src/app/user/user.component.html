@@ -1,3 +1,4 @@
+<!-- LOGIN FORM FOR LOGGED OUT USERS -->
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-3">    
@@ -13,9 +14,11 @@
         </div>
       </div>
   </div>
-        <button class="btn-outline" (click)="logout()" *ngIf="authService.user | async">
-        Logout
-        </button>
+  <div class="d-flex justify-content-md-end justify-content-sm-center">
+    <button class="btn btn-outline-secondary" (click)="logout()" *ngIf="authService.user | async">
+    Logout
+    </button>
+  </div>
 
 <!-- CONTENT EXCLUSIVE FOR LOGGED IN USERS -->
 <div *ngIf="authService.user | async" >
